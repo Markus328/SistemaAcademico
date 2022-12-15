@@ -1,5 +1,5 @@
-import bd
 #!/usr/bin/env python
+import bd
 import cgitb,cgi
 cgitb.enable(display = 0, logdir = "./")
 form = cgi.FieldStorage()
