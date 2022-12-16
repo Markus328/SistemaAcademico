@@ -9,15 +9,12 @@ def print_data():
 
 def fetchall():
     af = cursor.fetchall()
-    for i in range(len(af)):
-        af[i] = af[i][0]
-
     return af
 
 def connect(db_name): 
     global cursor
     global database
-    database = mysql.connector.connect(host="localhost", user="root",database=db_name)
+    database = mysql.connector.connect(host="localhost",user="root",database=db_name)
     cursor = database.cursor()
 
 

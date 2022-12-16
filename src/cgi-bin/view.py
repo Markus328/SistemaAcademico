@@ -2,7 +2,6 @@ import cgi
 import os
 
 form = cgi.FieldStorage()
-
 def __join_args(args):
     text = ""
     for e in args:

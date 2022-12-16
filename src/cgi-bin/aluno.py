@@ -1,21 +1,19 @@
-#!/usr/bin/env python3
 import bd
 import view
 
-
-
 def run(usuario):
-    bd.connect("teste")
+    bd.connect("SistemaAcademico")
 
 
-    bd.select("alunos_has_disciplina", "disciplina_iddisciplina", "alunos_matricula = " + usuario)
-    bd.select("disciplina", "nome", "iddisciplina = " + str(bd.fetchall()[0]))
-    disciplina = bd.fetchall()
-    bd.select("alunos_has_disciplina", "nota", "alunos_matricula = " + usuario)
-    nota = bd.fetchall()
-
-    bd.select("alunos_has_disciplina", "presenca", "alunos_matricula = " + usuario)
-    presenca = bd.fetchall()
-
-    html = view.load("paginaAluno.html") % (disciplina[0],nota[0],presenca[0])
-    print(html)
+    bd.select("alunos","nome","matricula = %s" % usuario)
+    nome = bd.fetchall()[0][0]
+    bd.select("alunos_has_disciplina AD,disciplina D", "D.nome,AD.nota,AD.presenca", "AD.alunos_matricula = %s AND AD.disciplina_iddisciplina = D.iddisciplina" % (usuario))
+    table = bd.fetchall()
+    html = view.load("paginaAluno.html")
+    line = "<tr class=\"row100 body\"><td class=\"cell100 column2\">{}</td><td class=\"cell100 column3\">{}</td><td class=\"cell100 column4\">{}</td></tr>" 
+    t = ""
+    for x in table:
+       t += line.format(*x) 
+        
+    print(html.format(nome,t))
+    
