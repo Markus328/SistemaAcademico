@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="ui.css">
+        <meta charset="UTF-8">
+        <title>Sistema Acadêmico</title>
+        <link rel="icon" href="img5.png">
+    </head>
+    <body>
+        <h1>Sistema Acadêmico</h1>
+
+
+
+
+
+        <ul class="lgscreen">
+
+        <form action="./cgi-bin/login.py" method="post" style="margin-left:70px;">
+
+            Aluno<br><br><br>
+
+            USUÁRIO <input type="text" name="usuario" style="margin-left:10px;">
+            <br>
+            <br>
+            SENHA <input type="text" name="senha" style="margin-left:27px;">
+
+            <br>
+            <br>
+            <input type="submit" name="submit" value="Acessar o Sistema" style="cursor:pointer; background-color:#14213D; margin-left: 83px; font-size:15px; color:#e5e5e5; padding-left:32.5px; padding-right:32.5px;">
+            <input type="hidden" name="type" value="alunos">
+
+        </form>
+
+        <form action="./cgi-bin/login.py" method="post" style="margin-left:120px;">
+
+            Professor<br><br><br>
+
+            USUÁRIO <input type="text" name="usuario" style="margin-left:10px;">
+            <br>
+            <br>
+            SENHA <input type="text" name="senha" style="margin-left:27px;">
+
+            <br>
+            <br>
+            <input type="submit" name="submit" value="Acessar o Sistema" style="cursor:pointer; background-color:#14213D; margin-left: 83px; font-size:15px; color:#e5e5e5; padding-left:32.5px; padding-right:32.5px;">
+            <input type="hidden" name="type" value="professor">
+
+        </form>
+
+        </ul>
+
+
+
+
+        <br>
+
+        <img src="img5.png" width="150" height="150">
+
+        <address>
+            ©2022 Sistema Acadêmico
+            <br>
+            Sistema Acadêmico criado por Matheus Cristian, Abimael Ferreira, Abraão Rodrigues, Davi Ribeiro, Isaac Mota.
+
+        </address>
+
+    </body>
+</html>
+
